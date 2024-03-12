@@ -6,8 +6,10 @@ class Home {
 
 
     clickOnWomenTab() {
-        
+        this.womenTab.click();
     }
+
+
 }
 
 export default new Home();
