@@ -1,9 +1,12 @@
 /// <reference types="cypress" />
 
+import Base from "../pages/Base";
+import Home from "../pages/Home";
+
 describe("Test związany z zaznaczaniem checkboxa",() => {
     it("Kliknięcie w zakładkę Women", () => {
-        cy.visit("/");
-        cy.get(`a[title="Women"]`).click();
+        Base.openHomePage();
+        Home.womenTab.click();
         cy.url().should("include", "id_category=3&controller=category")
     })
     
