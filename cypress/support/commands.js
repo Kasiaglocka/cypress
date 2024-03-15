@@ -15,7 +15,14 @@
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
+Cypress.Commands.add("login", (login, password) => {
+    cy.visit("/");
+    cy.get("a.login").click();
+    cy.get("#login_form").should("be.visible")
+    cy.get("#email").type(login)
+    cy.get("#passwd").type(password)
+    cy.get("#SubmitLogin").click();
+})
 //
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
