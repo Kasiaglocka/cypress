@@ -1,7 +1,9 @@
 /// <reference types="cypress" />
 
+import { login, passwd } from "../fixtures/loginData.json"
+
 describe("Custom Commands", () => {
     it("Logowanie do strony automationpractice.pl", () => {
-        cy.login("test@test.pl", "12345678");
+        cy.login(login, passwd);
     })
 })
